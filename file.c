@@ -45,7 +45,7 @@ void readlvl(Map *map){
         perror("fopen:");
         exit(0);
     }
-    map->width = ;
+   // map->width = ;
     
 
 }
