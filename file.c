@@ -37,6 +37,20 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
+//le but de la fonction ici est de lire le fichier niveau0.lvl et de récuperer les informations de largeur et hauteur de la map. c'est pas simple
+
+void readlvl(Map *map){
+    FILE *niveau = fopen("level/niveau0.lvl", "r");
+    if( niveau == NULL){
+        perror("fopen:");
+        exit(0);
+    }
+    map->width = ;
+    
+
+}
+
+
 
 void LibererMap(Map* map, Sprites* sprites)
 {

@@ -6,7 +6,8 @@
 int jouer(SDL_Renderer* renderer) {
     
 	//charger image et personnage. 
-
+    Map *map = malloc(sizeof(Map*)); 
+    map->width = 
     int continuer = 1; //a utiliser pour savoir si on continue la boucle du jeu ou si on arrête. 
     SDL_Event events;
     SDL_Event event;
@@ -17,13 +18,13 @@ int jouer(SDL_Renderer* renderer) {
         while (SDL_PollEvent(&event)){
             switch (event.type){
                 case SDL_QUIT:
-                continuer=0;
+                continuer=0; //test
                 break;
             }
         }
         
     }
-    
+    free (map);
 	//a vous de compléter, au fur et à mesure, les deux fonctions en dessous pour bien faire le nettoyage. 
     /*LibererMap(map, sprites);
     freePersonnage(mario, goomba, nbGoomba);
