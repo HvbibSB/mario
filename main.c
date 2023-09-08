@@ -36,10 +36,11 @@ int main(int argc, char *argv[])
             		switch(event.key.keysym.sym)
 					{
 						case SDLK_1 :
-							SDL_DestroyTexture(MenuTexture);
-							SDL_DestroyWindow(window);
-							SDL_DestroyRenderer(renderer);
-							SDL_Quit();
+							printf("touche appuyée ");
+							
+							printf("avant continuer ");
+							continuer = jouer(renderer);
+							printf("fin op ");
 							return 0;
 							break;
 					}
@@ -55,4 +56,3 @@ int main(int argc, char *argv[])
 	SDL_Quit();
 	return 0;
 }
-
