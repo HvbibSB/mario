@@ -45,11 +45,18 @@ void readlvl(Map *map){
         perror("fopen:");
         exit(0);
     }
-    map->width = ;
+    //fgetc...?
+    //int var1;
+    //fscanf(niveau, "%d", &var1);
+    Map *map = malloc(sizeof(Map));
+    map->width = 30;
+    printf("%d", map->width);
+    map->height = 30;
+    printf("%d", map->height);
+    //while ()
+    return map;
     
-
 }
-
 
 
 void LibererMap(Map* map, Sprites* sprites)
