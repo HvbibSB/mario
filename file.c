@@ -48,8 +48,16 @@ Map* ChargerMap(char* level)
 {
     Map* map = malloc(sizeof(Map));
 	
-
-	return map;
+//int fgetc(FILE *niveau0.lvl) pour récuperer les informations du fichier niveau0.lvl
+    //int var1;
+    //fscanf(niveau0.lvl, "%d", &var1);
+    Map *map = malloc(sizeof(Map));
+    map->width = ;
+    printf("%d", map->width);
+    map->height = var1;
+    printf("%d", map->height);
+    //while ()
+    return map;
 }
 
 void afficherMap(Map* map, Sprites* sprites, SDL_Renderer *renderer) {
