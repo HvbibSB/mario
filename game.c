@@ -39,6 +39,12 @@ int jouer(SDL_Renderer* renderer) {
                     case SDL_KEYDOWN:
             		    switch(event.key.keysym.sym)
 					    {
+
+			    case SDLK_1://appuie sur 1
+                       	    case SDLK_ESCAPE://appuie sur echap    
+				    
+                            continuer = 0;
+                            break;
                             case SDLK_d:
                             SDL_Log("droite");
                             break;
