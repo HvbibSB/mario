@@ -33,33 +33,31 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     SDL_RenderCopy(renderer, tmp, NULL, NULL); /* On copie tmp sur texture */
     SDL_DestroyTexture(tmp); //nettoyage
     SDL_FreeSurface(surface); //nettoyage
-    SDL_SetRenderTarget(renderer, NULL); /* La cible de rendu est de nouveau le renderer. */
+    SDL_SetRenderTarget(renderer, NULL); /* La cible de rendu est de nosuveau le renderer. */
     return texture;
 }
 
-//le but de la fonction ici est de lire le fichier niveau0.lvl et de récuperer les informations de largeur et hauteur de la map. c'est pas simple
+Sprites* chargerImages(SDL_Renderer *renderer) {
+    Sprites* sprites;
+    
+	
+    return sprites;
+}
 
-void readlvl(Map *map){
-    FILE *niveau = fopen("level/niveau0.lvl", "r");
-    if( niveau == NULL){
-        perror("fopen:");
-        exit(0);
-    }
-    //fgetc...?
-    //int var1;
-    //fscanf(niveau, "%d", &var1);
-    Map *map = malloc(sizeof(Map));
-    map->width = 30;
-    printf("%d", map->width);
-    map->height = 30;
-    printf("%d", map->height);
-    //while ()
-    return map;
+Map* ChargerMap(char* level)
+{
+    Map* map = malloc(sizeof(Map));
+	
+
+	return map;
+}
+
+void afficherMap(Map* map, Sprites* sprites, SDL_Renderer *renderer) {
+
     
 }
 
-
 void LibererMap(Map* map, Sprites* sprites)
 {
-    
+  
 }
