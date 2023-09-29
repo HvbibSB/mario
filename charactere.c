@@ -7,12 +7,16 @@
 
 void chargerMario(Personnage* mario, Map* map, SDL_Renderer *renderer)
 {
-	Personnage *mario = malloc(sizeof(Personnage));
+    mario -> image=malloc(sizeof(SDL_Texture)*NUMBER_IMAGE_MARIO);
+    mario -> position.x=100;
+    mario -> position.y=100;
+    mario -> position.w=WIDTH_MARIO;
+    mario -> position.h=HEIGHT_MARIO;
     mario -> jump=0;
     mario -> jumptime=0;
     mario -> gravite=0;
     mario -> direction=0;
-    mario -> temp=;
+    mario -> temp=0; // pas sûr de celle là
     mario -> win=0;
     mario -> invisible=0;
     mario -> lvl;
@@ -30,6 +34,6 @@ int chooseSpriteMovement(Personnage* mario, int numero1, int numero2) {
     return numero1;
 }
 
-void freePersonnage(Personnage* mario, Personnage **goomba, int nbGoomba) {
-    
+void freePersonnage(Personnage* mario) { //faudra ajouter ", Personnage **goomba, int nbGoomba" après le mario
+    free (mario);
 }
