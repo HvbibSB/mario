@@ -45,12 +45,30 @@ Sprites* chargerImages(SDL_Renderer *renderer) {
 }
 
 void readlvl(Map *map){
-    FILE *niveau = fopen("level/niveau0.lvl", "r");
+       FILE *niveau = fopen("level/niveau0.lvl", "r");
     if( niveau == NULL){
         perror("fopen:");
         exit(0);
     }
-   
+    char lvl[10];
+    fgets(lvl ,10, niveau);
+    
+    int nb;
+    fscanf(niveau, "%d",&nb);
+    map->width = nb;
+    
+    int nb2;
+    fscanf(niveau,"%d",&nb2);
+    map->height = nb2;
+    int *tab = malloc((map->width)*sizeof(int*));
+    for(int i=0; i<map->width; i++){
+        map->LoadedMap[i]=malloc(sizeof(int)*map->height);
+    }
+    int *tab = malloc((map->height)*sizeof(int*));
+    for(int j=0; j<map->height; j++){
+        map->LoadedMap[j]=malloc(sizeof(int)*map->width);
+    }
+   fclose(niveau);
     return map;
     
 }
