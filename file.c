@@ -37,15 +37,50 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
+Sprites* ChargerImage(SDL_Renderer* renderer){
+    Sprites* nsprite = malloc(10*sizeof(Sprites));
+    nsprite[0].sprite = loadImage("img/sky.png",renderer);
+    nsprite[0].traverser = 0;
+
+    nsprite[1].sprite = loadImage("img/sol.png",renderer);
+    nsprite[1].traverser = 1;    
+
+    nsprite[2].sprite = loadImage("img/block.png",renderer);
+    nsprite[2].traverser = 1;
+
+    nsprite[3].sprite = loadImage("img/boîte.png",renderer);
+    nsprite[3].traverser = 1;
+
+    nsprite[4].sprite = loadImage("img/tuyau1.png",renderer);
+    nsprite[4].traverser = 1;
+
+    nsprite[5].sprite = loadImage("img/tuyau2.png",renderer);
+    nsprite[5].traverser = 1;
+
+    nsprite[6].sprite = loadImage("img/tuyau3.png",renderer);
+    nsprite[6].traverser = 1;
+
+    nsprite[7].sprite = loadImage("img/tuyau4.png",renderer);
+    nsprite[7].traverser = 1;
+
+    nsprite[8].sprite = loadImage("img/fin1.png",renderer);
+    nsprite[8].traverser = 1;
+
+    nsprite[9].sprite = loadImage("img/fin2.png",renderer);
+    nsprite[9].traverser = 0;
+    
+    return nsprite;
+}
+
 Sprites* chargerImages(SDL_Renderer *renderer) {
     Sprites* sprites;
     
 	
     return sprites;
 }
-
 void readlvl(Map *map){
-       FILE *niveau = fopen("level/niveau0.lvl", "r");
+
+    FILE *niveau = fopen("level/niveau0.lvl", "r");
     if( niveau == NULL){
         perror("fopen:");
         exit(0);
@@ -62,11 +97,17 @@ void readlvl(Map *map){
     map->height = nb2;
     int *tab = malloc((map->width)*sizeof(int*));
     for(int i=0; i<map->width; i++){
-        map->LoadedMap[i]=malloc(sizeof(int)*map->height);
-        for(int j=0; j<map->height; j++){
-            map->LoadedMap[j]=malloc(sizeof(int)*map->width);
-        }
+        map->LoadedMap[i]=malloc(sizeof(int)*map->height);   
     }
+
+    for(int j=0; j<map->width; j++){
+        for(int k=0; k<map->height; k++){
+            fscanf(niveau,"%d",map->LoadedMap[j][k]);
+        }
+
+    }  
+
+
    fclose(niveau);
     return map;
     
