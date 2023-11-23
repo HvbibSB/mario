@@ -37,7 +37,7 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
-Sprites* ChargerImage(SDL_Renderer* renderer){
+Sprites* chargerImages(SDL_Renderer* renderer){
     Sprites* nsprite = malloc(10*sizeof(Sprites));
     nsprite[0].sprite = loadImage("img/sky.png",renderer);
     nsprite[0].traverser = 0;
@@ -72,12 +72,6 @@ Sprites* ChargerImage(SDL_Renderer* renderer){
     return nsprite;
 }
 
-Sprites* chargerImages(SDL_Renderer *renderer) {
-    Sprites* sprites;
-    
-	
-    return sprites;
-}
 void readlvl(Map *map){
 
     FILE *niveau = fopen("level/niveau0.lvl", "r");
@@ -113,12 +107,12 @@ void readlvl(Map *map){
     
 }
 
-void afficherMap(Map* map, Sprites* sprites, SDL_Renderer *renderer) {
+void afficherMap(Map* map, Sprites* nsprite, SDL_Renderer *renderer) {
 
     
 }
 
-void LibererMap(Map* map, Sprites* sprites)
+void LibererMap(Map* map, Sprites* nsprites)
 {
   
 }
