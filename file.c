@@ -107,12 +107,24 @@ void readlvl(Map *map){
     
 }
 
-void afficherMap(Map* map, Sprites* nsprite, SDL_Renderer *renderer) {
+void afficherMap(Map* map, Sprites* sprites, SDL_Renderer *renderer) {
 
-    
+    SDL_Rect rectangleSource = {0,0,40,40};
+    SDL_Rect rectangleDest = {0,0,32,32};
+    for (int i = 0; i < map->height; i++)
+    {
+        for (int j = 0; j < map->width; j++)
+        {
+            rectangleDest.x = j*32;
+            rectangleDest.y = i*32;
+            SDL_RenderCopy(renderer, sprites[map->LoadedMap[i][j]].sprite, &rectangleSource, &rectangleDest);
+
+        }
+        
+    }
 }
 
-void LibererMap(Map* map, Sprites* nsprites)
+void LibererMap(Map* map, Sprites* sprites)
 {
   
 }
