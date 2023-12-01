@@ -53,7 +53,3 @@ int chooseSpriteMovement(Personnage* mario, int numero1, int numero2) {
 void freePersonnage(Personnage* mario) { //faudra ajouter ", Personnage **goomba, int nbGoomba" après le mario
     free (mario);
 }
-
-void freePersonnage(Personnage* mario) { //faudra ajouter ", Personnage **goomba, int nbGoomba" après le mario
-    free (mario);
-}
