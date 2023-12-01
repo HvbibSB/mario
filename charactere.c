@@ -30,16 +30,16 @@ void chargerMario(Personnage* mario, Map* map, SDL_Renderer *renderer)
 
 void afficherPerso(Personnage* mario, int xscroll, int yscroll , SDL_Renderer *renderer) {
 	SDL_Rect rectangleSource = {0,0,WIDTH_MARIO,HEIGHT_MARIO};
-	SDL_Rect rectangleDest = {0,0,mario->position,mario->position};
+	SDL_Rect rectangleDest = mario->position;
 
         if(mario->direction=1)
         {
-	        SDL_RenderCopy(renderer, mario->image[1],&rectangleSource,&rectangleDest);
+	        SDL_RenderCopy(renderer, mario->image[1],&rectangleSource, &mario->position);
         }
 
         else if(mario->direction=2)
         {
-            SDL_RenderCopy(renderer, mario->image[2],&rectangleSource,&rectangleDest);
+            SDL_RenderCopy(renderer, mario->image[2],&rectangleSource, &mario->position);
         }
 }
 
